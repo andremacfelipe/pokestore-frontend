@@ -3,7 +3,7 @@ import "./style.css"
 
 const Logo = () => {
     return (
-        <h1>LOGO</h1>
+        <h1 className="Logo"> LOGO</h1>
     )
 }
 
