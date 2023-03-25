@@ -1,6 +1,6 @@
 .Header{
     display:flex;
-    background-color: #0186FF;
+    background-color: #F2D200;
     width: 100vw;
     padding:10px;
     align-items: center;
@@ -49,14 +49,13 @@
 }
 .Header .HeaderRegisterAndLoginContainer button{
     border:none;
-    outline:3px solid #0186FF;
     width: 77px;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     color:white;
-    background-color:#0060B1AA;
+    background-color:#EF5350;
     cursor: pointer;
     font-weight: 600;
     border-radius: 3px;
@@ -67,8 +66,7 @@
     background: none;
 }
 .Header .HeaderRegisterAndLoginContainer button:hover{
-    background-color: #0186FF;
-    outline:3px solid  #0060B1AA;
+    background-color: #DF4340;
 
 }
 
@@ -79,4 +77,3 @@
     font-weight: 800;
 }
 
-/* Tem esse pequeno bug no mobile pois estou obrigando a barra e a logo a ficarem juntos */
