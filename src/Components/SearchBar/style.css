@@ -1,0 +1,23 @@
+.SearchBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    /* flex-wrap: wrap; */
+
+}
+.SearchBar .SearchBarInput{
+    border:none;
+    outline:none;
+    font-size: 24px;
+    border-radius: 3px;
+}
+.SearchBar .SearchIcon{
+    color:white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.SearchBar .SearchIcon::selection{
+    color:none;
+    background: none;
+}

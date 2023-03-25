@@ -3,7 +3,7 @@ import React from "react";
 
 const ShoppingKart = () => {
     return (
-        <span className="material-symbols-rounded ShoppingKart">
+        <span className="material-symbols-rounded ShoppingKart notranslate">
             shopping_cart
         </span>
     )

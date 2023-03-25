@@ -5,13 +5,17 @@ import Logo from "../Logo/Logo";
 import ShoppingKart from "../MaterialSymbolsRounded/ShoppingKart";
 import MenuIcon from "../MaterialSymbolsRounded/MenuIcon";
 import AccountCircle from "../MaterialSymbolsRounded/AccountCircle";
-
+import SearchBar from "../SearchBar/SearchBar";
 
 const Header = () => {
     return (
         <header className="Header">
             <MenuIcon />
-            <Logo />
+            <div className="headerDBox">
+                <Logo />
+                </div>
+                <SearchBar />
+            
             <div className="HeaderRegisterAndLoginContainer">
                 <AccountCircle />
                 <button>

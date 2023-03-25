@@ -9,6 +9,7 @@
 .App{
   display: flex;
   flex-direction: column;
+  /* flex-wrap: nowrap; */
 }
 .App .material-symbols-rounded::selection{
   color:none;

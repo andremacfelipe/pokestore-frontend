@@ -5,11 +5,17 @@
     padding:10px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .Header .MenuIcon{
     font-size: 48px;
     cursor: pointer;
     color:white;
+}
+.Header .headerDBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .Header .Logo{
     color:white;
@@ -72,3 +78,5 @@
     cursor:pointer;
     font-weight: 800;
 }
+
+/* Tem esse pequeno bug no mobile pois estou obrigando a barra e a logo a ficarem juntos */
