@@ -10,7 +10,9 @@
     border:none;
     outline:none;
     font-size: 24px;
-    border-radius: 3px;
+    border-radius: 5px;
+    color:#555;
+    padding:5px;
 }
 .SearchBar .SearchIcon{
     color:white;
