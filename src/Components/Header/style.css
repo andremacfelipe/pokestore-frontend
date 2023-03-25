@@ -17,6 +17,9 @@
     align-items: center;
     justify-content: center;
 }
+.Header .headerDBox a{
+    display: flex;
+}
 .Header .Logo{
     color:white;
     cursor: pointer;
@@ -36,6 +39,10 @@
     font-size: 48px;
     margin-right:5px;
     cursor:default;
+}
+.Header .HeaderRegisterAndLoginContainer a{
+    text-decoration: none;
+
 }
 .Header .HeaderRegisterAndLoginContainer .headerText{
     color:white;
