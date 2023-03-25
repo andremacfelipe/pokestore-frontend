@@ -1,9 +1,11 @@
 import React from "react";
 import "./style.css"
 
+import pokeStoreLogo from "../../assets/png/pokeStore.png"
+
 const Logo = () => {
     return (
-        <h1 className="Logo"> LOGO</h1>
+        <img src={pokeStoreLogo} alt="PokeStore" className="Logo" />
     )
 }
 
