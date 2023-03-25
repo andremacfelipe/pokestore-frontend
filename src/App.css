@@ -5,11 +5,14 @@
   font-family: "Roboto", sans-serif, sans-serif;
 }
 
-
+:root{
+  --ContainerBackgroundColor:#F4F4F4;
+}
 .App{
   display: flex;
   flex-direction: column;
   /* flex-wrap: nowrap; */
+  overflow: hidden;
 }
 .App .material-symbols-rounded::selection{
   color:none;
