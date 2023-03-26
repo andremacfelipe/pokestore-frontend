@@ -6,13 +6,21 @@ const register = async (data) => {
         body:JSON.stringify(data)
     }
 
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/register`,registerOptions)
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/register`,registerOptions).then(async (res) => {
 
-    if (!res.ok) throw Error("Email already in use")
+        const json = await res.json()
 
-    const userData = res.json()
+        const data = {
+            status:res.status,
+            ok:res.ok,
+            response:json
+        }
+        return data
 
-    return userData
+
+    })
+
+    return res
 
 }
 
