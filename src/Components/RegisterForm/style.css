@@ -38,6 +38,13 @@
     border-radius: 3px;
 
 }
+.RegisterForm .RegisterFormInput[type=password]{
+    margin-bottom:0px;
+}
+.RegisterForm .passwordLengthError{
+    font-size: 12px;
+    margin-bottom:7px;
+}
 .RegisterForm .RegisterButton{
     font-size: 32px;
     padding:5px;
