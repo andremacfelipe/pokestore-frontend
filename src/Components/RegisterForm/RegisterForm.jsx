@@ -67,6 +67,9 @@ const RegisterForm = () => {
             <span className="alreadyHaveAnAccount">
                 Already have an account? <Link className="LoginButtonLink" to="/login">Login</Link>
             </span>
+            <span className="RegisterError">
+                {registerError ? registerError : ""}
+            </span>
             
         </form>
     )
