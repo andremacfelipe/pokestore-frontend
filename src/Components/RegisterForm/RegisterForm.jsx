@@ -11,7 +11,7 @@ import { register } from "../../services/auth/register";
 
 const RegisterForm = () => {
 
-    const [registerUserInputs,setRegisterUserInputs] = useState({fullname:"",email:"",password:""})
+    const [registerUserInputs,setRegisterUserInputs] = useState({username:"",email:"",password:""})
     const [registerError,setRegisterError] = useState()
     const [passwordLengthError,setPasswordLengthError] = useState(null)
 
@@ -35,7 +35,7 @@ const RegisterForm = () => {
                 ...registerUserInputs,
                 password:""
             })
-        }else if (registerUserInputs.fullname && registerUserInputs.email && registerUserInputs.password.length >= 8){
+        }else if (registerUserInputs.username && registerUserInputs.email && registerUserInputs.password.length >= 8){
             register(registerUserInputs)
             .then(res => console.log(res))
             .catch(err => setRegisterError(err.message))
@@ -51,7 +51,7 @@ const RegisterForm = () => {
                 <Logo />
                 <h1>Register on the best pokeshop platform worldwide!</h1>
             </div>
-            <input type="text" name="fullname" value={registerUserInputs.fullname} required className="RegisterFormInput" id="fullNameInput" placeholder="Full name..." 
+            <input type="text" name="username" value={registerUserInputs.username} required className="RegisterFormInput" id="userameInput" placeholder="Username..." 
             onChange={handleChange} />
             <input type="email" name="email" value={registerUserInputs.email} className="RegisterFormInput" required id="emailInput" placeholder="Email..."
                 onChange={handleChange} 
@@ -70,6 +70,7 @@ const RegisterForm = () => {
             <span className="RegisterError">
                 {registerError ? registerError : ""}
             </span>
+            <pre>{JSON.stringify(registerUserInputs,null,2)}</pre>
             
         </form>
     )
