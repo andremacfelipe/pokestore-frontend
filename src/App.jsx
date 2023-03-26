@@ -6,7 +6,10 @@ import { LayoutProvider } from './Contexts/LayoutContext/LayoutContext';
 
 import Container from './Components/Container/Container';
 import Header from './Components/Header/Header';
+
+
 import Home from './Pages/Home/Home';
+import RegisterPage from './Pages/RegisterPage/RegisterPage';
 
 function App() {
   return (
@@ -20,11 +23,10 @@ function App() {
                 <Route 
                 index 
                 element={
-                  <Container>
-                    <Home />    
-                  </Container>
+                  <Home/>
                 } />
               </Route>
+              <Route path='/register' element={<RegisterPage/>}/>
             </Routes>
           </Router>
         </LayoutProvider>
