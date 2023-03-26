@@ -30,7 +30,7 @@
 }
 
 .RegisterForm .RegisterFormInput{
-    margin-bottom: 7px;
+    /* margin-bottom: 7px; */
     font-size: 26px;
     outline:1px solid #99999955;
     border:none;
@@ -44,6 +44,12 @@
 .RegisterForm .passwordLengthError{
     font-size: 12px;
     margin-bottom:7px;
+    color:red;
+}
+.RegisterForm .inputError{
+    font-size: 12px;
+    margin-bottom: 7px;
+    color:red;
 }
 .RegisterForm .RegisterButton{
     font-size: 32px;

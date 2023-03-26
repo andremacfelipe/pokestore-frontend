@@ -1,5 +1,5 @@
 import "./style.css"
-import React,{useState,useRef} from "react";
+import React,{useState,useRef, useEffect} from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../Logo/Logo"
@@ -12,10 +12,36 @@ import { register } from "../../services/auth/register";
 const RegisterForm = () => {
 
     const [registerUserInputs,setRegisterUserInputs] = useState({username:"",email:"",password:""})
-    const [registerError,setRegisterError] = useState()
+    const [registerInputError,setRegisterInputError] = useState({path:""})
     const [passwordLengthError,setPasswordLengthError] = useState(null)
 
+
+    const RegisterFormUsernameRef = useRef()
+    const RegisterFormEmailRef = useRef()
     const RegisterFormPasswordRef = useRef()
+    
+
+    //DEBUG
+
+        useEffect(() => {
+            
+            switch (registerInputError.path) {
+                case "username":
+                    RegisterFormUsernameRef.current.style.outline = "1px solid red"
+                    break;
+                case "email":
+                    RegisterFormEmailRef.current.style.outline = "1px solid red"
+            
+                default:
+                    break;
+            }
+
+
+        },[registerInputError])
+
+
+
+    //DEBUG
 
     const handleChange = (e) => {
         const fieldName = e.target.name
@@ -37,8 +63,15 @@ const RegisterForm = () => {
             })
         }else if (registerUserInputs.username && registerUserInputs.email && registerUserInputs.password.length >= 8){
             register(registerUserInputs)
-            .then(res => console.log(res))
-            .catch(err => setRegisterError(err.message))
+            .then(res => {
+                if (!res.ok){
+                    setRegisterInputError(res.response)
+                    throw Error()
+                }else{
+                    console.log(res.response)
+                }
+            })
+            .catch(err => console.log(err.message))
         }
     }
 
@@ -52,26 +85,28 @@ const RegisterForm = () => {
                 <h1>Register on the best pokeshop platform worldwide!</h1>
             </div>
             <input type="text" name="username" value={registerUserInputs.username} required className="RegisterFormInput" id="userameInput" placeholder="Username..." 
-            onChange={handleChange} />
+            onChange={handleChange} ref={RegisterFormUsernameRef}/>
+            <span className="usernameError inputError">
+                {registerInputError.path === "username" ? registerInputError.message + "*" : ""}
+            </span>
             <input type="email" name="email" value={registerUserInputs.email} className="RegisterFormInput" required id="emailInput" placeholder="Email..."
-                onChange={handleChange} 
+                onChange={handleChange}
+                ref={RegisterFormEmailRef} 
             />
+            <span className="emailError inputError">
+                {registerInputError.path === "email" ? registerInputError.message + "*" : ""}
+            </span>
             <input type="password" required name="password" value={registerUserInputs.password} className="RegisterFormInput" id="passwordInput" placeholder="Password..."
                 onChange={handleChange} 
                 ref={RegisterFormPasswordRef}
             />
             <span className="passwordLengthError">
-                {passwordLengthError ? passwordLengthError : ""}
+                {passwordLengthError ? passwordLengthError + "*" : ""}
             </span>
             <button type="submit" className="RegisterButton" onClick={handleRegisterSubmit}>Register</button>
             <span className="alreadyHaveAnAccount">
                 Already have an account? <Link className="LoginButtonLink" to="/login">Login</Link>
             </span>
-            <span className="RegisterError">
-                {registerError ? registerError : ""}
-            </span>
-            <pre>{JSON.stringify(registerUserInputs,null,2)}</pre>
-            
         </form>
     )
 }
