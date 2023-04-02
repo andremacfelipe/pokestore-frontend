@@ -1,14 +1,21 @@
 import "./style.css"
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import React, { useContext, useState } from "react"
+import { Link,useNavigate } from "react-router-dom"
 
 import Logo from "../Logo/Logo"
 
+import AuthContext from "../../Contexts/AuthContext/AuthContext"
+
 import { login } from "../../services/auth/login"
+import { validateSession } from "../../services/auth/validateSession"
 
 const LoginForm = () => {
     const [loginUserInputs,setLoginUserInputs] = useState({email:"",password:""})
     const [loginError,setLoginError] = useState(null)
+
+    const navigate = useNavigate()
+
+    const {setUserData} = useContext(AuthContext)
 
     const handleChange = (e) => {
         const fieldName = e.target.name
@@ -24,15 +31,31 @@ const LoginForm = () => {
 
         if (loginUserInputs.email && loginUserInputs.password){
             login(loginUserInputs)
-            .then(res => {
+            .then( async res => {
                 if (!res.ok){
                     console.log(res.response)
                     setLoginError(res.response.message)
+                    setUserData(null)
+                    sessionStorage.clear()
                     throw Error()
                 }else{
-                    console.log(res.response)
+                    sessionStorage.setItem("USER_TOKEN",res.response.USER_TOKEN)
+                    try {
+                        const validateSessionResponse = await validateSession()
+                        if (!validateSessionResponse.ok){
+                            sessionStorage.clear()
+                            setUserData(null)
+                        }else{
+                            setUserData(validateSessionResponse.response)
+                            navigate("/")
+                        }
+
+
+                    } catch (err) {
+                        console.log(err)
+                    }
                 }
-            } ).catch(err => {console.log("um erro")})
+            } ).catch(err => {})
         }
 
 
@@ -57,14 +80,13 @@ const LoginForm = () => {
                 
             />
             <span className="LoginErrorMessage">
-
+                {loginError ? loginError : ""}
             </span>
 
             <button type="submit" className="LoginButton" onClick={ handleLoginSubmit } >Login</button>
             <span className="dontHaveAnAccount">
                 Don't have an account yet? <Link className="RegisterButtonLink" to="/register">Register</Link>
             </span>
-            <pre>{JSON.stringify(loginUserInputs,null,2)}</pre>
         </form>
     )
 }
