@@ -1,6 +1,6 @@
 import "./style.css"
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../Logo/Logo"
 
@@ -14,6 +14,8 @@ const RegisterForm = () => {
     const [registerUserInputs, setRegisterUserInputs] = useState({ username: "", email: "", password: "" })
     const [registerInputError, setRegisterInputError] = useState({ path: "" })
     const [passwordLengthError, setPasswordLengthError] = useState(null)
+
+    const navigate = useNavigate()
 
 
     const RegisterFormUsernameRef = useRef()
@@ -71,7 +73,7 @@ const RegisterForm = () => {
                         setRegisterInputError(res.response)
                         throw Error()
                     } else {
-                        console.log(res.response)
+                        navigate("/login")
                     }
                 })
                 .catch(err => {})
