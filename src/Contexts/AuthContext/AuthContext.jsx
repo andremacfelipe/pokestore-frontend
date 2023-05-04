@@ -7,12 +7,18 @@ export const AuthProvider = ({children}) => {
     const [userData,setUserData] = useState(null)
 
 
+    const logout = () => {
+        sessionStorage.clear()
+        setUserData(null)
+    }
+
 
     return(
         <AuthContext.Provider
         value={{
             userData,
-            setUserData
+            setUserData,
+            logout
         }}
         >
             {children}
