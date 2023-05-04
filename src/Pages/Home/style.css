@@ -2,4 +2,6 @@
     overflow-y:auto;
     display: flex;
     flex-direction: column;
+    background-color: #ff7f50dd;
+    min-height: calc(100vh - 82px);
 }
