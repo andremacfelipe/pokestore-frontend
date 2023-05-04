@@ -25,7 +25,7 @@ const Header = () => {
                 </div>
                 <SearchBar />
 
-                <div className="HeaderRegisterAndLoginContainer">
+                <div className="HeaderContainer">
                     <AccountCircle />
                     <Link to="/login" className="loginLink">
                         <button>

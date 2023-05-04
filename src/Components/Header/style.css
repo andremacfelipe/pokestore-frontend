@@ -29,32 +29,32 @@
     background: none;
 
 }
-.Header .HeaderRegisterAndLoginContainer{
+.Header .HeaderContainer{
     display: flex;
     align-items: center;
     justify-content:center;
 }
-.Header .HeaderRegisterAndLoginContainer .AccountCircle{
+.Header .HeaderContainer .AccountCircle{
     color:white;
     font-size: 48px;
     margin-right:5px;
     cursor:default;
 }
-.Header .HeaderRegisterAndLoginContainer a{
+.Header .HeaderContainer a{
     text-decoration: none;
 
 }
-.Header .HeaderRegisterAndLoginContainer .headerText{
+.Header .HeaderContainer .headerText{
     color:white;
     margin-left: 10px;
     margin-right: 10px;
     font-weight: 500;
 }
-.Header .HeaderRegisterAndLoginContainer .headerText::selection{
+.Header .HeaderContainer .headerText::selection{
     color:none;
     background: none;
 }
-.Header .HeaderRegisterAndLoginContainer button{
+.Header .HeaderContainer button{
     border:none;
     width: 77px;
     padding: 10px;
@@ -68,11 +68,11 @@
     border-radius: 3px;
     transition:.1s;
 }
-.Header .HeaderRegisterAndLoginContainer button::selection{
+.Header .HeaderContainer button::selection{
     color:none;
     background: none;
 }
-.Header .HeaderRegisterAndLoginContainer button:hover{
+.Header .HeaderContainer button:hover{
     background-color: #DF4340;
 
 }
