@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.css"
 
 import { Outlet, Link } from "react-router-dom";
@@ -9,11 +9,14 @@ import MenuIcon from "../MaterialSymbolsRounded/MenuIcon";
 import AccountCircle from "../MaterialSymbolsRounded/AccountCircle";
 import SearchBar from "../SearchBar/SearchBar";
 
-
+import AuthContext from "../../Contexts/AuthContext/AuthContext";
 
 
 
 const Header = () => {
+
+    const { userData, logout } = useContext(AuthContext)
+
     return (
         <>
             <header className="Header">
@@ -27,15 +30,27 @@ const Header = () => {
 
                 <div className="HeaderContainer">
                     <AccountCircle />
-                    <Link to="/login" className="loginLink">
-                        <button>
-                            Login
-                        </button>
-                    </Link>
-                    <span className="headerText">or</span>
-                    <Link to="/register">
-                        <button>Register</button>
-                    </Link>
+                    {
+                        !userData ?
+                            <>
+                                <Link to="/login" className="loginLink">
+                                    <button>
+                                        Login
+                                    </button>
+                                </Link>
+                                <span className="headerText">or</span>
+                                <Link to="/register">
+                                    <button>Register</button>
+                                </Link>
+                            </>
+                        :
+                        <>
+                            <span className="headerText">
+                                {`Hi, ${userData.username}`}
+                            </span>
+                            <button onClick={logout}>Logout</button>
+                        </>
+                    }
                 </div>
                 <div className="HeaderMisc">
                     <ShoppingKart />
