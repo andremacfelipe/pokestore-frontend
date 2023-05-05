@@ -1,0 +1,13 @@
+.SellListings{
+    padding:10px;
+    background-color: #ff7f50dd;
+    width: 650px;
+}
+.SellListings .SellListingsTableRows .SellListingsHeader{
+    display:grid;
+    grid-template-columns: auto 20% 20%;
+    margin-bottom: 10px;
+}
+.SellListings .SellListingsTableRows .SellListingsHeader .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
+    text-align: center;
+ }
