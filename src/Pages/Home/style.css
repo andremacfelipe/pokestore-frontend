@@ -2,7 +2,7 @@
     overflow-y:auto;
     display: flex;
     flex-direction: column;
-    background-color: #ff7f50dd;
+    background-color: #FFFFFF;
     min-height: calc(100vh - 82px);
     align-items: center;
 }
