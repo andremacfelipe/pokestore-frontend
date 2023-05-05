@@ -1,9 +1,11 @@
 .SellListingCard{
     padding:10px;
-    background-color:aqua;
+    /* background-color:aqua; */
     display: grid;
     grid-template-columns:auto auto 20% 20%;
     margin-bottom: 10px;
+    border:1px solid #80808033;
+    cursor: pointer;
 }
 .SellListingCard .SellListingCardItemPic{
     width:50px;
