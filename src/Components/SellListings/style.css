@@ -1,12 +1,14 @@
 .SellListings{
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding:10px;
-    background-color: #ff7f50dd;
+    box-shadow: 1px 1px 9px  #eeeeee;
     width: 650px;
 }
 .SellListings .SellListingsTableRows .SellListingsHeader{
     display:grid;
     grid-template-columns: auto 20% 20%;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 .SellListings .SellListingsTableRows .SellListingsHeader .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
     text-align: center;
