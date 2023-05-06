@@ -5,11 +5,19 @@
     box-shadow: 1px 1px 9px  #eeeeee;
     width: 650px;
 }
-.SellListings .SellListingsTableRows .SellListingsHeader{
+.SellListings .SellListingsTable {
+    display:flex;
+    flex-direction: column;
+}
+.SellListings .SellListingsTable .SellListingsHeader{
     display:grid;
     grid-template-columns: auto 20% 20%;
     margin-bottom: 30px;
 }
-.SellListings .SellListingsTableRows .SellListingsHeader .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
-    text-align: center;
- }
+.SellListings .SellListingsTable .SellListingsHeader .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

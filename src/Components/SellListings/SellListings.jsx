@@ -7,8 +7,8 @@ const SellListings = () => {
     return (
         <div className="SellListings">
 
-            <div className="SellListingsTableRows">
-                <div className="SellListingsHeader">
+            <div className="SellListingsTable">
+                <div className="SellListingsHeader SellListingsTableRow">
                     <div className="SellListingsItemNameColumn">
                         NAME
                     </div>

@@ -1,25 +1,29 @@
 .SellListingCard{
-    padding:10px;
+    padding-top:10px;
+    padding-bottom:10px;
     /* background-color:aqua; */
     display: grid;
-    grid-template-columns:auto auto 20% 20%;
+    grid-template-columns:auto 20% 20%;
     margin-bottom: 10px;
     border:1px solid #80808033;
     cursor: pointer;
 }
-.SellListingCard .SellListingCardItemPic{
+.SellListingCard .SellListingsItemNameColumn{
+    display:flex;
+}
+.SellListingCard .SellListingsItemNameColumn .SellListingCardItemPic{
     width:50px;
     height: 50px;
     background-color: #d3d3d3;
+    margin-left:10px;
 }
-.SellListingCard .SellListingCardItemName{
-    align-self: center;
-    /* text-align: center; */
+.SellListingCard .SellListingsItemNameColumn .SellListingCardItemNameText{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
 }
-.SellListingCard .SellListingCardItemAmount, .SellListingCardItemPrice {
-    text-align: center;
-    align-self: center;
-}
-.SellListingCard .SellListingCardItemPrice{
-    text-align: center;
+.SellListingCard .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

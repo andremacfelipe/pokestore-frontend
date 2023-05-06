@@ -6,17 +6,19 @@ const SellListingCard = ({ className }) => {
     return (
         <div className="SellListingCard">
 
-            <div className="SellListingCardItemPic">
+            <div className="SellListingsItemNameColumn">
+                <div className="SellListingCardItemPic">
 
-            </div>
-            <div className="SellListingCardItemName">
-                Pikachu the goat
+                </div>
+                <div className="SellListingCardItemNameText">
+                    Pikachu the goat
+                </div>
             </div>
 
-            <div className="SellListingCardItemAmount">
+            <div className="SellListingsItemAmountColumn">
                 1.000
             </div>
-            <div className="SellListingCardItemPrice">
+            <div className="SellListingsItemPriceColumn">
                 49.99
             </div>
         </div>
