@@ -14,7 +14,7 @@
 }
 .SellListingCard .SellListingCardItemName{
     align-self: center;
-    text-align: center;
+    /* text-align: center; */
 }
 .SellListingCard .SellListingCardItemAmount, .SellListingCardItemPrice {
     text-align: center;
