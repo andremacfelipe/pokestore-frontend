@@ -15,7 +15,7 @@
 ## Running
 ### To run this project you will need to create a .env file and add the REACT_APP_API_URL to it.
 
-### Install de dependencies with "npm install".
+### Install the dependencies with "npm install".
 ### Run with "npm start" 
 
 ## Check-out the <a href="https://github.com/andremacfelipe/pokestore-backend">Backend Repository</a>.
