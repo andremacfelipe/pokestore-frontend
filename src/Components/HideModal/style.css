@@ -1,0 +1,12 @@
+.HideModal{
+    background-color: #dddddd6a;
+    position:absolute;
+    top:82px;
+    bottom:0px;
+    left: 0px;
+    right: 0px;
+
+}
+.hidden{
+    display:none;
+}
