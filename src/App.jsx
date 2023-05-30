@@ -7,7 +7,7 @@ import { AuthProvider } from './Contexts/AuthContext/AuthContext';
 
 import Header from './Components/Header/Header';
 
-
+import Container from './Components/Container/Container';
 import Home from './Pages/Home/Home';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
@@ -25,7 +25,9 @@ function App() {
                 <Route
                   index
                   element={
-                    <Home />
+                    <Container>
+                      <Home />
+                    </Container>
                   } />
               </Route>
               <Route path='/register' element={<RegisterPage />} />

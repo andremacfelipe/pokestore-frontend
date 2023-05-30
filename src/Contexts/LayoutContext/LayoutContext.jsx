@@ -1,4 +1,4 @@
-import React,{createContext,} from "react";
+import React,{createContext, useEffect, useState} from "react";
 
 import useWindowSize from "../../hooks/Layout/useWindowSize";
 
@@ -10,10 +10,19 @@ export const LayoutProvider = ({children}) => {
 
     const isMobile = width < 900 ? true : false
     
-    
+    const [showSideMenu, setShowSideMenu] = useState(false)
+    const hideSideMenu = () => {
+        return setShowSideMenu(prev => !prev)
+    }
+
     return (
         <LayoutContext.Provider
-            value={{isMobile}}
+            value={{
+                isMobile,
+                showSideMenu,
+                setShowSideMenu,
+                hideSideMenu
+            }}
         >
             {children}
 

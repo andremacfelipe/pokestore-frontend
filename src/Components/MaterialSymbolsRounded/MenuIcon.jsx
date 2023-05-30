@@ -1,9 +1,9 @@
 import React from "react";
 
 
-const MenuIcon = () => {
+const MenuIcon = ({onClick}) => {
     return (
-        <span className="material-symbols-rounded MenuIcon notranslate">
+        <span className="material-symbols-rounded MenuIcon notranslate" onClick={onClick}>
             menu
         </span>
     )

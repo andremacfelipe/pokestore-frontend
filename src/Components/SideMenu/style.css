@@ -1,0 +1,30 @@
+.SideMenu{
+    display:flex;
+    position:absolute;
+    top: 0px;
+    bottom:0px;
+    left:0px;
+    background-color: #f4f4f4;
+    width: 270px;
+    overflow: auto;
+    padding:10px;
+    border-radius: 3px;
+    flex-direction: column;
+    border:1px solid #ddddddc3;
+    box-shadow: 1px 1px 9px  #eeeeee;
+
+}
+.SideMenu .sideMenuSection{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.SideMenu .sideMenuSection .sectionName{
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 36px;
+    border-bottom: 1px solid gray;
+}
+.hidden{
+    background-color: blue;
+}
