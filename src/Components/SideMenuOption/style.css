@@ -15,6 +15,10 @@
 .SideMenuOption .optionLabel{
     font-size: 30px;
 }
+.SideMenuOption .optionLabel::selection{
+    background:none;
+    color:none;
+}
 .SideMenuOption:hover{
     background-color: #e1e1e1;
 }
