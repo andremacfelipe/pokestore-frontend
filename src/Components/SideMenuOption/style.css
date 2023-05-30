@@ -1,0 +1,20 @@
+.SideMenuOption{
+    display:flex;
+    margin-bottom:7px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    /* justify-content: center; */
+    align-items: center;
+}
+.SideMenuOption .material-symbols-rounded{
+    font-size: 36px;
+    margin-right: 5px;
+}
+.SideMenuOption .optionLabel{
+    font-size: 30px;
+}
+.SideMenuOption:hover{
+    background-color: #e1e1e1;
+}
