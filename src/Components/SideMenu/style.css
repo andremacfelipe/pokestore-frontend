@@ -1,12 +1,11 @@
 .SideMenu{
     display:flex;
     position:absolute;
-    top: 82px;
+    top: 0px;
     bottom:0px;
     left:0px;
     background-color: #f4f4f4;
     width: 270px;
-    /* height: 93vh; */
     overflow: auto;
     padding:10px;
     border-radius: 3px;
