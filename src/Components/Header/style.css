@@ -2,7 +2,6 @@
     display:flex;
     background-color: #F2D200;
     width: 100%;
-    padding:10px;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -48,12 +47,40 @@
 .Header .HeaderContainer .headerText{
     color:white;
     margin-left: 10px;
-    margin-right: 10px;
     font-weight: 500;
+
 }
 .Header .HeaderContainer .headerText::selection{
     color:none;
     background: none;
+}
+.Header .HeaderContainer .userContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 70px;
+    margin-right: 20px;
+    padding-right: 5px;
+}
+.Header .HeaderContainer .userContainer .headerText{
+    margin-right: 10px;
+}
+.Header .HeaderContainer .userContainer:hover{
+    background:none;
+}
+.Header .HeaderContainer .userLoggedContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 70px;
+    margin-right: 50px;
+    padding-right: 5px;
+}
+.Header .HeaderContainer .userLoggedContainer:hover{
+    background-color: #00000011;
+    border-radius: 5px;
 }
 .Header .HeaderContainer button{
     border:none;
@@ -78,10 +105,31 @@
 
 }
 
-.Header .HeaderMisc .ShoppingKart{
+.Header .HeaderContainer .logoutContainer{
+    height: 70px;
+    display:flex;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.Header .HeaderContainer .LogoutIcon{
     font-size: 40px;
     color:white;
     cursor:pointer;
-    font-weight: 800;
+    font-weight: 1000;
+    transition: .3s;
+    border-radius:5px;
+    padding:5px;
+}
+.Header .HeaderContainer .logoutContainer:hover{
+    background-color: #00000010;
+   
 }
 
+@media screen and (max-width:900px){
+    .Header .HeaderContainer .userContainer{
+        margin:0;
+        
+    }
+}
