@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./style.css"
 
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 
 import Logo from "../Logo/Logo";
 import MenuIcon from "../MaterialSymbolsRounded/MenuIcon";
@@ -27,6 +27,44 @@ const Header = () => {
                             <Logo />
                         </Link>
                     </div>
+                    <nav className="headerLinks">
+                        <NavLink
+                            to="/store"
+                            className="headerLink"
+                            style={({ isActive }) => {
+                                return {
+                                    textDecoration: isActive ? "underline" : "none",
+                                    color: isActive ? "#356ABC" : ""
+                                }
+                            }}
+                        >
+                            <span className="storeLink">STORE</span>
+                        </NavLink>
+                        <NavLink
+                            to="/"
+                            className="headerLink"
+                            style={({ isActive }) => {
+                                return {
+                                    textDecoration: isActive ? "underline" : "none",
+                                    color: isActive ? "#356ABC" : ""
+                                }
+                            }}
+                        >
+                            <span className="marketLink">MARKET</span>
+                        </NavLink>
+                        <NavLink 
+                            to="/about"
+                            className="headerLink"
+                            style={({ isActive }) => {
+                                return {
+                                    textDecoration: isActive ? "underline" : "none",
+                                    color: isActive ? "#356ABC" : ""
+                                }
+                            }}
+                        >
+                            <span className="aboutLink">ABOUT</span>
+                        </NavLink>
+                    </nav>
                     <div className="HeaderContainer">
                         {
                             !userData ?

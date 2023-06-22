@@ -29,6 +29,23 @@
     background: none;
 
 }
+.Header .headerLinks{
+    display:flex;
+}
+.Header .headerLinks .headerLink{
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    color:white;
+}
+.Header .headerLinks .headerLink:visited{
+    color:white;
+}
 .Header .HeaderContainer{
     display: flex;
     align-items: center;
