@@ -1,8 +1,10 @@
 .HideModal{
     background-color: #dddddd6a;
-    position:absolute;
+    position:fixed;
     top:0px;
     bottom:0px;
+    min-height: 100vh;
+    max-height: 100vh;
     left: 0px;
     right: 0px;
 
