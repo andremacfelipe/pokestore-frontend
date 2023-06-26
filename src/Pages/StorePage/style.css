@@ -20,6 +20,16 @@
 
 @media screen and (max-width:900px){
     .StorePage .caseSection{
+        grid-template-columns: auto auto auto auto;
+    }
+}
+@media screen and (max-width:770px){
+    .StorePage .caseSection{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width:570px){
+    .StorePage .caseSection{
         grid-template-columns: auto auto;
     }
 }
