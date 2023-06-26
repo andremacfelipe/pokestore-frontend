@@ -8,6 +8,8 @@ import MenuIcon from "../MaterialSymbolsRounded/MenuIcon";
 import AccountCircle from "../MaterialSymbolsRounded/AccountCircle";
 import LogoutIcon from "../MaterialSymbolsRounded/LogoutIcon";
 
+import SideMenu from "../SideMenu/SideMenu";
+
 import AuthContext from "../../Contexts/AuthContext/AuthContext";
 import LayoutContext from "../../Contexts/LayoutContext/LayoutContext";
 
@@ -52,7 +54,7 @@ const Header = () => {
                         >
                             <span className="marketLink">MARKET</span>
                         </NavLink>
-                        <NavLink 
+                        <NavLink
                             to="/about"
                             className="headerLink"
                             style={({ isActive }) => {
@@ -98,7 +100,12 @@ const Header = () => {
                     </div>
 
                 </header>
-                <Outlet />
+                <>
+                    <Outlet />
+                    <SideMenu />
+                </>
+
+
 
             </>
         )
@@ -135,7 +142,11 @@ const Header = () => {
                     </div>
 
                 </header>
-                <Outlet />
+                <>
+                    <Outlet />
+                    <SideMenu />
+                </>
+
 
             </>
         )
