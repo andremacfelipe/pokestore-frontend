@@ -52,3 +52,23 @@
     grid-template-columns: auto auto auto auto auto;
     grid-column-gap: 24px;
 }
+
+@media screen and (max-width:1114px){
+    .CasePage .caseContentSection{
+        grid-template-columns:auto auto auto auto;
+    }
+}
+@media screen and (max-width:892px){
+    .CasePage .caseContentSection{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width:664px){
+    .CasePage .caseContentSection{
+        grid-template-columns: auto auto;
+    }
+    .CasePage .caseContentSection .PokemonCard {
+        width: 100%;
+        padding:40px;
+    }
+}
