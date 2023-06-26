@@ -1,0 +1,29 @@
+.ItemCard {
+    display:flex;
+    flex-direction: column;
+    /* border: 3px solid gray; */
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom:30px;
+    width: 150px;
+    height: 200px;
+    justify-content: space-evenly;
+    /* padding:10px; */
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.ItemCard .pokemonCardPic{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.ItemCard .pokemonCardPic img{
+    width: 100px;
+}
+.ItemCard .itemName {
+    font-size: 24px;
+    text-transform: capitalize;
+    font-family: "Turret Road";
+    font-weight: 700;
+}

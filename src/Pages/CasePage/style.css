@@ -1,0 +1,74 @@
+.CasePage{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    max-height: calc(100vh - 70px);
+    align-items: center;
+    overflow-y:auto;
+}
+.CasePage .caseOpeningSection{
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.CasePage .caseOpeningSection .caseName{
+    text-align: center;
+}
+.CasePage .caseOpeningSection .caseImageContainer{
+    display: flex;
+    width: 300px;
+    /* height: 300px; */
+}
+.CasePage .caseOpeningSection .caseImageContainer img{
+    width: 100%;
+}
+.CasePage .sortedItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.CasePage .caseOpeningSection .buttonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.CasePage .caseOpeningSection .buttonContainer .openButton{
+    width: 70%;
+    padding:10px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    font-size: 32px;
+    background-color: green;
+    color:white;
+    font-weight: 900;
+    font-family: "Turret Road";
+}
+.CasePage .caseContentSection{
+    margin-top:20px;
+    display: grid;
+    /* width: 100%; */
+    grid-template-columns: auto auto auto auto auto;
+    grid-column-gap: 24px;
+}
+
+@media screen and (max-width:1114px){
+    .CasePage .caseContentSection{
+        grid-template-columns:auto auto auto auto;
+    }
+}
+@media screen and (max-width:892px){
+    .CasePage .caseContentSection{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width:664px){
+    .CasePage .caseContentSection{
+        grid-template-columns: auto auto;
+    }
+    .CasePage .caseContentSection .PokemonCard {
+        width: 100%;
+        padding:40px;
+    }
+}

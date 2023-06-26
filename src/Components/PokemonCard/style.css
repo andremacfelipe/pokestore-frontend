@@ -1,0 +1,59 @@
+.PokemonCard{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    box-shadow: 5px 5px 7px gray, -2px -2px 10px gray;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    /* font-family: 'Press Start 2P'; */
+    font-family: 'Turret Road';
+    position: relative;
+    /* margin-right:20px; */
+    margin-bottom: 40px;
+    transition: .12s;
+    cursor:pointer;
+
+}
+
+.PokemonCard .pokemonCardPic{
+    width: 100px;
+    height: 100px;
+    /* background-color: aliceblue; */
+    outline: 3px solid aliceblue;
+    border-radius: 50%;
+}
+.PokemonCard .pokemonCardInfo{
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+    width: 100%;
+}
+.PokemonCard .pokemonCardInfo .pokemonName{
+    /* font-size: 12px; */
+    font-weight: 700;
+    text-align: center;
+    font-family: "Turret Road";
+}
+.PokemonCard  .pokemonStats{
+    /* font-family: 'Press Start 2P'; */
+    font-family: 'Turret Road';
+    font-size:16px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    /* margin-left:10px; */
+    /* margin-bottom:30px; */
+    
+}
+/* .PokemonCard .pokemonStats  */
+.PokemonCard .pokemonStats p{
+    margin-bottom:6px;
+    font-family: "Turret Road";
+}
+.PokemonCard .pokemonCardInfo .pokemonStats .pokemonType{
+    display: flex;
+}

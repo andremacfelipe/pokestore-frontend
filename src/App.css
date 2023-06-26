@@ -13,6 +13,7 @@
   flex-direction: column;
   /* flex-wrap: nowrap; */
   overflow: hidden;
+  position:relative;
 }
 .App .material-symbols-rounded::selection{
   color:none;

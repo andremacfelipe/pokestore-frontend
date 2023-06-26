@@ -7,10 +7,11 @@ import { AuthProvider } from './Contexts/AuthContext/AuthContext';
 
 import Header from './Components/Header/Header';
 
-import Container from './Components/Container/Container';
 import Home from './Pages/Home/Home';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
+import StorePage from './Pages/StorePage/StorePage';
+import CasePage from './Pages/CasePage/CasePage';
 
 function App() {
   return (
@@ -25,10 +26,21 @@ function App() {
                 <Route
                   index
                   element={
-                    <Container>
-                      <Home />
-                    </Container>
-                  } />
+                    <Home />
+                  } 
+                />
+                <Route
+                  path='/store'
+                  element={
+                    <StorePage/>
+                  }
+                />
+                <Route
+                  path='/store/:id'
+                  element={
+                    <CasePage/>
+                  }
+                />
               </Route>
               <Route path='/register' element={<RegisterPage />} />
               <Route path='/login' element={<LoginPage />} />
