@@ -3,6 +3,7 @@
     flex-direction: column;
     background-color: #FFFFFF;
     max-height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
     align-items: center;
     overflow-y:auto;
 }
