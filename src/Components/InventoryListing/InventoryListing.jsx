@@ -3,22 +3,24 @@ import React from "react";
 
 
 
-
-const InventoryListing = ({item,}) => {
+const InventoryListing = ({ item, setInfoCardItemId }) => {
 
     const {
-        itemPic
+        itemPic,
     } = item
+    const itemId = item._id
 
     return (
-        <div 
+        <div
             className="InventoryListing"
-            
+            id={itemId}
+            onClick={() => { setInfoCardItemId(itemId) }}
+
         >
-            <img 
+            <img
                 src={itemPic || ""}
                 alt=""
-                
+
             />
         </div>
     )
