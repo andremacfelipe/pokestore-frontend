@@ -1,11 +1,10 @@
 .InventoryListings {
     display: grid;
-    grid-template: 100px 100px 100px 100px 100px / 100px 100px 100px 100px 100px ;
-    gap:3px;
+    grid-template: 100px 100px 100px 100px 100px / 100px 100px 100px 100px 100px;
+    gap: 3px;
     justify-items: stretch;
-    padding:10px;
+    padding: 10px;
     min-width: 550px;
-    
     background-color: #F9F9F9;
     /* overflow-y: auto; */
 }
