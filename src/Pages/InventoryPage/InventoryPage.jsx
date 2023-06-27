@@ -29,7 +29,7 @@ const InventoryPage = () => {
                 setInventoryPages(res)
                 setInfoCardItemId(res[0][0]._id)
 
-            })
+            }).catch(err =>{})
 
 
     }, [])
@@ -75,9 +75,14 @@ const InventoryPage = () => {
                     </div>
                 </nav>
             </div>
-            <ItemInfoCard
+            {
+                inventoryPages[0] ? 
+                <ItemInfoCard
                 itemId={infoCardItemId}
-            />
+                />
+                :
+                <></>
+            }
         </main>
     )
 }
