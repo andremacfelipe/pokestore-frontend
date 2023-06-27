@@ -13,6 +13,8 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import StorePage from './Pages/StorePage/StorePage';
 import CasePage from './Pages/CasePage/CasePage';
 import InventoryPage from './Pages/InventoryPage/InventoryPage';
+import MarketPage from './Pages/MarketPage/MarketPage';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
                 <Route
                   index
                   element={
-                    <Home />
+                    <MarketPage/>
                   } 
                 />
 
@@ -50,9 +52,17 @@ function App() {
                     <InventoryPage/>
                   }
                 />
+                <Route path="*" element={
+                <NotFound/>
+              }
+              />
               </Route>
               <Route path='/register' element={<RegisterPage />} />
               <Route path='/login' element={<LoginPage />} />
+              <Route path="*" element={
+                <NotFound/>
+              }
+              />
             </Routes>
           </Router>
         </AuthProvider>

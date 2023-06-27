@@ -26,7 +26,6 @@ const InventoryPage = () => {
                 }
                 return result
             }).then(res => {
-                console.log(res)
                 setInventoryPages(res)
                 setInfoCardItemId(res[0][0]._id)
 

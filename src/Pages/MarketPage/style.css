@@ -1,0 +1,9 @@
+.MarketPage{
+    overflow-y:auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+    align-items: center;
+}
