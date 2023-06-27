@@ -4,17 +4,18 @@ import React from "react";
 import InventoryListing from "../InventoryListing/InventoryListing";
 
 
-const InventoryListings = ({currentPage}) => {
+const InventoryListings = ({ currentPage, setInfoCardItemId }) => {
 
     return (
         <section className="InventoryListings">
             {
-                currentPage?.map((item,key) => {
+                currentPage?.map((item, key) => {
                     return (
                         <InventoryListing
-                        item={item}
-                        key={key}
-                    />
+                            item={item}
+                            key={key}
+                            setInfoCardItemId={setInfoCardItemId}
+                        />
                     )
 
                 })
