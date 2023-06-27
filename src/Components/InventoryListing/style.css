@@ -1,0 +1,12 @@
+.InventoryListing {
+    /* border:1px solid black; */
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 2px;
+    border:1px solid gray;
+}
+.InventoryListing img{
+    width: 100%;
+}
