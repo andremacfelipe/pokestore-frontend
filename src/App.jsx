@@ -12,6 +12,7 @@ import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import StorePage from './Pages/StorePage/StorePage';
 import CasePage from './Pages/CasePage/CasePage';
+import InventoryPage from './Pages/InventoryPage/InventoryPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                     <Home />
                   } 
                 />
+
                 <Route
                   path='/store'
                   element={
@@ -39,6 +41,13 @@ function App() {
                   path='/store/:id'
                   element={
                     <CasePage/>
+                  }
+                />
+
+                <Route
+                  path='/profile/:id/inventory'
+                  element={
+                    <InventoryPage/>
                   }
                 />
               </Route>
