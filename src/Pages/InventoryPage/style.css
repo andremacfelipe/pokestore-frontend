@@ -110,3 +110,34 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width:890px) {
+    .InventoryPage .ItemInfoCard {
+        display: none;
+    }
+    .InventoryPage .inventoryContainer .InventoryListings {
+        min-width: 0;
+    }
+}
+@media screen and (max-width:890px) {
+    /* .InventoryPage .ItemInfoCard {
+        display: none;
+    } */
+    .InventoryPage .inventoryContainer {
+        min-height: 0;
+    }
+    .InventoryPage .inventoryContainer .InventoryListings {
+        grid-template: 90px 90px 90px 90px 90px/ 90px 90px 90px 90px 90px;
+        min-width:0;
+    }
+}
+@media screen and (max-width:580px) {
+    .InventoryPage .inventoryContainer {
+        min-height: 0;
+    }
+    .InventoryPage .inventoryContainer .InventoryListings {
+        grid-template: 70px 70px 70px 70px 70px / 70px 70px 70px 70px 70px;
+        min-width:0;
+        margin-bottom: 10px;
+    }
+}
