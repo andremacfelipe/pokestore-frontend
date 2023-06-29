@@ -6,6 +6,7 @@ import InventoryListings from "../../Components/InventoryListings/InventoryListi
 import ItemInfoCard from "../../Components/ItemInfoCard/ItemInfoCard"
 import ArrowRight from "../../Components/MaterialSymbolsRounded/ArrowRight"
 import ArrowLeft from "../../Components/MaterialSymbolsRounded/ArrowLeft"
+import PageLoading from "../../Components/PageLoading/PageLoading";
 
 const InventoryPage = () => {
 
@@ -13,6 +14,8 @@ const InventoryPage = () => {
     const [currentPageIndex, setCurrentPageIndex] = useState(0)
 
     const [infoCardItemId, setInfoCardItemId] = useState(null)
+
+    const [loading, setLoading] = useState(true)
 
     const { id } = useParams()
 
@@ -29,8 +32,13 @@ const InventoryPage = () => {
                 setInventoryPages(res)
                 setInfoCardItemId(res[0][0]._id)
 
-            }).catch(err =>{})
+            }).catch(err => {
 
+            }).finally(() => {
+                setLoading(false)
+            })
+
+        document.title = "Inventory"
 
     }, [])
 
@@ -51,37 +59,44 @@ const InventoryPage = () => {
 
     return (
         <main className="InventoryPage">
-            <div className="inventoryContainer">
-                <h1>Inventory</h1>
-                <InventoryListings
-                    currentPage={inventoryPages[currentPageIndex]}
-                    setInfoCardItemId={setInfoCardItemId}
-                />
-                <nav className="nextAndPreviousPage">
-                    <div
-                        className="previousButton"
-                        onClick={previousInventoryPage}
-                    >
-                        <ArrowLeft />
-                    </div>
-                    <span className="currentPageStatus">
-                        {`${currentPageIndex + 1} of ${inventoryPages.length}`}
-                    </span>
-                    <div
-                        className="nextButton"
-                        onClick={nextInventoryPage}
-                    >
-                        <ArrowRight />
-                    </div>
-                </nav>
-            </div>
             {
-                inventoryPages[0] ? 
-                <ItemInfoCard
-                itemId={infoCardItemId}
-                />
-                :
-                <></>
+                loading ?
+                    <PageLoading />
+                    :
+                    <>
+                        <div className="inventoryContainer">
+                            <h1>Inventory</h1>
+                            <InventoryListings
+                                currentPage={inventoryPages[currentPageIndex]}
+                                setInfoCardItemId={setInfoCardItemId}
+                            />
+                            <nav className="nextAndPreviousPage">
+                                <div
+                                    className="previousButton"
+                                    onClick={previousInventoryPage}
+                                >
+                                    <ArrowLeft />
+                                </div>
+                                <span className="currentPageStatus">
+                                    {`${currentPageIndex + 1} of ${inventoryPages.length}`}
+                                </span>
+                                <div
+                                    className="nextButton"
+                                    onClick={nextInventoryPage}
+                                >
+                                    <ArrowRight />
+                                </div>
+                            </nav>
+                        </div>
+                        {
+                            inventoryPages[0] ?
+                                <ItemInfoCard
+                                    itemId={infoCardItemId}
+                                />
+                                :
+                                <></>
+                        }
+                    </>
             }
         </main>
     )

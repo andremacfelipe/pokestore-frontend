@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../Logo/Logo"
+import LoadingSpin from "../LoadingSpin/LoadingSpin";
 
 
 import { register } from "../../services/auth/register";
@@ -14,6 +15,7 @@ const RegisterForm = () => {
     const [registerUserInputs, setRegisterUserInputs] = useState({ username: "", email: "", password: "" })
     const [registerInputError, setRegisterInputError] = useState({ path: "" })
     const [passwordLengthError, setPasswordLengthError] = useState(null)
+    const [registerLoading,setRegisterLoading] = useState(false)
 
     const navigate = useNavigate()
 
@@ -67,6 +69,7 @@ const RegisterForm = () => {
                 password: ""
             })
         } else if (registerUserInputs.username && registerUserInputs.email && registerUserInputs.password.length >= 8) {
+            setRegisterLoading(true)
             register(registerUserInputs)
                 .then(res => {
                     if (!res.ok) {
@@ -77,6 +80,9 @@ const RegisterForm = () => {
                     }
                 })
                 .catch(err => {})
+                .finally(() => {
+                    setRegisterLoading(false)
+                })
         }
     }
 
@@ -112,7 +118,9 @@ const RegisterForm = () => {
             <span className="passwordLengthError">
                 {passwordLengthError ? passwordLengthError + "*" : ""}
             </span>
-            <button type="submit" className="RegisterButton" onClick={handleRegisterSubmit}>Register</button>
+            <button type="submit" className="RegisterButton" onClick={registerLoading ? ()=>{} : handleRegisterSubmit}>
+                {registerLoading ? <LoadingSpin/> : "Register"}
+            </button>
             <span className="alreadyHaveAnAccount">
                 Already have an account? <Link className="LoginButtonLink" to="/login">Login</Link>
             </span>
