@@ -6,6 +6,11 @@
     align-items: center;
     overflow-y:auto;
 }
+.isLoading {
+    min-height: calc(100vh - 70px);
+    align-items: center;
+    justify-content: center;
+}
 .CasePage .caseOpeningSection{
     display:flex;
     flex-direction: column;
