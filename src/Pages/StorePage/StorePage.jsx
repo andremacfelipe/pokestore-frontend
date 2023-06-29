@@ -11,6 +11,8 @@ const StorePage = () => {
         fetch(`${process.env.REACT_APP_API_URL}/api/case`)
         .then(res => res.json())
         .then(data => setAvailableCases(data))
+
+        document.title = "Store"
     },[])
 
     return (
