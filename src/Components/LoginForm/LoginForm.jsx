@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 import Logo from "../Logo/Logo"
+import LoadingSpin from "../LoadingSpin/LoadingSpin"
 
 import AuthContext from "../../Contexts/AuthContext/AuthContext"
 
@@ -31,9 +32,9 @@ const LoginForm = () => {
     const handleLoginSubmit = () => {
 
         if (loginUserInputs.email && loginUserInputs.password) {
+            setLoginLoading(true)
             login(loginUserInputs)
                 .then(async res => {
-                    setLoginLoading(true)
                     if (!res.ok) {
                         setLoginError(res.response.message)
                         setUserData(null)
@@ -88,7 +89,9 @@ const LoginForm = () => {
                 {loginError ? loginError : ""}
             </span>
 
-            <button type="submit" className="LoginButton" onClick={handleLoginSubmit} >Login</button>
+            <button type="submit" className="LoginButton" onClick={loginLoading ? () => {} : handleLoginSubmit} >
+                {loginLoading ? <LoadingSpin /> : "Login" }
+            </button>
             <span className="dontHaveAnAccount">
                 Don't have an account yet? <Link className="RegisterButtonLink" to="/register">Register</Link>
             </span>
