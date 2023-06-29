@@ -31,6 +31,7 @@ const InventoryPage = () => {
 
             }).catch(err =>{})
 
+            document.title = "Inventory"
 
     }, [])
 
