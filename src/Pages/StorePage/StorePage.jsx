@@ -13,6 +13,7 @@ const StorePage = () => {
             .then(res => res.json())
             .then(data => {
                 setAvailableCases(data)
+            }).finally(() => {
                 setLoading(false)
             })
 
