@@ -1,14 +1,13 @@
 import "./style.css"
 import React, { useContext } from "react"
 
-import LayoutContext from "../../Contexts/LayoutContext/LayoutContext"
 
-const HideModal = ({onClick,children}) => {
 
-    const {showSideMenu} = useContext(LayoutContext)
+const HideModal = ({onClick,children,showContent}) => {
+
 
     return (
-        <div className={`HideModal ${showSideMenu ? "" : "hidden"}`} onClick={onClick}>
+        <div className={`HideModal ${showContent ? "" : "hidden"}`} onClick={onClick}>
             {children}
         </div>
     )
