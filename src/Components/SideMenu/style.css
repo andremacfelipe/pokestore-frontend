@@ -2,7 +2,8 @@
     display: flex;
     position: absolute;
     top: 0px;
-    bottom: 0px;
+    min-height: 100vh;
+    max-height: 100vh;
     left: 0px;
     background-color: #f4f4f4;
     width: 270px;
@@ -36,7 +37,13 @@ a:visited {
 }
 
 
-
 /* .hidden{
     background-color: blue;
 } */
+
+@media screen and (max-width:590px) {
+    .SideMenu .pokeStoreLinks{
+        margin-bottom:50px;
+    }
+    
+}
