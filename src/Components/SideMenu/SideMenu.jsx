@@ -1,6 +1,6 @@
 import "./style.css"
 import React, { useContext } from "react"
-import { NavLink } from "react-router-dom"
+
 
 import SideMenuOption from "../SideMenuOption/SideMenuOption"
 import HideModal from "../HideModal/HideModal"
@@ -28,63 +28,65 @@ const SideMenu = () => {
     return (
 
         <>
-            <HideModal onClick={hideSideMenu} />
-            <div className={`SideMenu ${showSideMenu ? "" : "hidden"}`} >
-                <section className="sideMenuSection">
-                    {/* <span className="sectionName">
+            <HideModal onClick={hideSideMenu} showContent={showSideMenu} >
+                <div className={`SideMenu ${showSideMenu ? "" : "hidden"}`} >
+                    <section className="sideMenuSection">
+                        {/* <span className="sectionName">
                         Account
                     </span> */}
-                    {
-                        userData ?
-                            <>
+                        {
+                            userData ?
+                                <>
+                                    <SideMenuOption
+                                        icon={<AccountCircle />}
+                                        label="My profile"
+                                    />
+                                    <SideMenuOption
+                                        icon={<FriendsIcon />}
+                                        label="Friends"
+                                    />
+                                    <SideMenuOption
+                                        label="Inventory"
+                                        icon={<InventoryIcon />}
+                                        navTo={`/profile/${userData.userId}/inventory`}
+                                    />
+                                    <SideMenuOption
+                                        label="Purchases"
+                                        icon={<PurchaseHistoryIcon />}
+                                    />
+                                    <SideMenuOption
+                                        label="Notifications"
+                                        icon={<NotificationIcon />}
+                                    />
+                                </>
+                                :
                                 <SideMenuOption
+                                    label="Login"
                                     icon={<AccountCircle />}
-                                    label="My profile"
+                                    navTo={"/login"}
                                 />
-                                <SideMenuOption
-                                    icon={<FriendsIcon />}
-                                    label="Friends"
-                                />
-                                <SideMenuOption
-                                    label="Inventory"
-                                    icon={<InventoryIcon />}
-                                    navTo={`/profile/${userData.userId}/inventory`}
-                                />
-                                <SideMenuOption
-                                    label="Purchases"
-                                    icon={<PurchaseHistoryIcon />}
-                                />
-                                <SideMenuOption
-                                    label="Notifications"
-                                    icon={<NotificationIcon />}
-                                />
-                            </>
-                            :
-                            <SideMenuOption
-                                label="Login"
-                                icon={<AccountCircle />}
-                                navTo={"/login"}
-                            />
-                    }
-                </section>
-                <section className="sideMenuSection pokeStoreLinks">
-                    <span className="sectionName">
-                        {/* PokeStore */}
-                    </span>
-                    <SideMenuOption
-                        icon={<ShoppingKart />}
-                        label="Store"
-                        navTo={"/store"}
-                    />
+                        }
+                    </section>
+                    <section className="sideMenuSection pokeStoreLinks">
+                        <span className="sectionName">
+                            {/* PokeStore */}
+                        </span>
+                        <SideMenuOption
+                            icon={<ShoppingKart />}
+                            label="Store"
+                            navTo={"/store"}
+                        />
 
-                    <SideMenuOption
-                        icon={<MarketIcon />}
-                        label="Market"
-                        navTo={"/"}
-                    />
-                </section>
+                        <SideMenuOption
+                            icon={<MarketIcon />}
+                            label="Market"
+                            navTo={"/"}
+                        />
+                    </section>
 
-            </div>
+                </div>
+            </HideModal>
+
         </>
 
     )
