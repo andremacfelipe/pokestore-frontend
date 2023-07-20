@@ -5,8 +5,13 @@
     display: grid;
     grid-template-columns:auto 20% 20%;
     margin-bottom: 10px;
-    border:1px solid #80808033;
+    outline:1px solid #80808011;
     cursor: pointer;
+    transition: .12s;
+    
+}
+.SellListingCard:hover {
+    box-shadow: 1px 1px 1px 2px #00000010;
 }
 .SellListingCard .SellListingsItemNameColumn{
     display:flex;
@@ -14,13 +19,24 @@
 .SellListingCard .SellListingsItemNameColumn .SellListingCardItemPic{
     width:50px;
     height: 50px;
-    background-color: #d3d3d3;
+    /* background-color: #d3d3d3; */
     margin-left:10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.SellListingCard .SellListingsItemNameColumn .SellListingCardItemPic img {
+    width: 100%;
+
 }
 .SellListingCard .SellListingsItemNameColumn .SellListingCardItemNameText{
     display: flex;
     align-items: center;
     margin-left: 30px;
+    text-transform: capitalize;
+    font-weight: 600;
 }
 .SellListingCard .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
     display: flex;
