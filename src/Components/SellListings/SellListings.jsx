@@ -3,7 +3,7 @@ import React from "react"
 
 import SellListingCard from "../SellListingCard/SellListingCard"
 
-const SellListings = () => {
+const SellListings = ({items}) => {
     return (
         <div className="SellListings">
 
@@ -19,6 +19,16 @@ const SellListings = () => {
                         PRICE
                     </div>
                 </div>
+                {
+                    items?.map((item,key) => {
+                        return (
+                            <SellListingCard
+                                item={item}
+                                key={key}
+                            />
+                        )
+                    })
+                }
             </div>
         </div>
     )
