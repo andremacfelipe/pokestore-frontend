@@ -1,18 +1,24 @@
 import "./style.css"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import SellListings from "../../Components/SellListings/SellListings";
 
-
 const MarketPage = () => {
+
+    const [sellListingsItems,setSellListingsItems] = useState([])
 
     useEffect(() => {
         document.title = "Market"
+        fetch(`${process.env.REACT_APP_API_URL}/api/market`)
+        .then(res => res.json())
+        .then(data => setSellListingsItems(data))
     },[])
 
     return (
         <main className="MarketPage">
-            <SellListings />
+            <SellListings
+                items={sellListingsItems}
+            />
         </main>
     )
 }
