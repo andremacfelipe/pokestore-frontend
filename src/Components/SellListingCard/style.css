@@ -8,6 +8,7 @@
     outline:1px solid #80808011;
     cursor: pointer;
     transition: .12s;
+    width: 100%;
     
 }
 .SellListingCard:hover {

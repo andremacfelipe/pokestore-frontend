@@ -1,31 +1,37 @@
 import "./style.css"
 import React from "react"
+import { Link } from "react-router-dom"
 
 import SellListingCard from "../SellListingCard/SellListingCard"
 
-const SellListings = ({items}) => {
+const SellListings = ({ items,col1,col2,col3 }) => {
     return (
         <div className="SellListings">
 
             <div className="SellListingsTable">
                 <div className="SellListingsHeader SellListingsTableRow">
                     <div className="SellListingsItemNameColumn">
-                        NAME
+                        {col1}
                     </div>
                     <div className="SellListingsItemAmountColumn">
-                        AMOUNT
+                        {col2}
                     </div>
                     <div className="SellListingsItemPriceColumn">
-                        PRICE
+                        {col3}
                     </div>
                 </div>
                 {
-                    items?.map((item,key) => {
+                    items?.map((item, key) => {
                         return (
-                            <SellListingCard
-                                item={item}
-                                key={key}
-                            />
+                            <Link
+                                to={`/market/item/${item.itemName}`}
+                                className="linkDefault"
+                            >
+                                <SellListingCard
+                                    item={item}
+                                    key={key}
+                                />
+                            </Link>
                         )
                     })
                 }

@@ -18,6 +18,9 @@ const MarketPage = () => {
         <main className="MarketPage">
             <SellListings
                 items={sellListingsItems}
+                col1={"NAME"}
+                col2={"PRICE"}
+                col3={"AMOUNT"}
             />
         </main>
     )

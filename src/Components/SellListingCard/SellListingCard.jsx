@@ -3,7 +3,7 @@ import React, { useEffect } from "react"
 
 import { PokemonCardTypesBackgroundColor,PokemonCardTypesColors } from "../../misc/styles/PokemonCardColors/PokemonCardColors"
 
-const SellListingCard = ({ item, className }) => {
+const SellListingCard = ({ item,price, className }) => {
     return (
         <div className="SellListingCard">
 
@@ -30,7 +30,7 @@ const SellListingCard = ({ item, className }) => {
                 {item?.amount}
             </div>
             <div className="SellListingsItemPriceColumn">
-                {item?.price.toFixed(2)}
+                {item?.price?.toFixed(2) || price}
             </div>
         </div>
     )
