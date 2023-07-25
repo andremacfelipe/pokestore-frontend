@@ -1,10 +1,11 @@
 .SellListingCard{
-    padding-top:10px;
-    padding-bottom:10px;
+    /* padding-top:10px; */
+    /* padding-bottom:10px; */
     /* background-color:aqua; */
-    display: grid;
-    grid-template-columns:auto 20% 20%;
+    /* display: grid; */
+    /* grid-template-columns:auto 20% 20%; */
     margin-bottom: 10px;
+    
     outline:1px solid #80808011;
     cursor: pointer;
     transition: .12s;
@@ -16,6 +17,8 @@
 }
 .SellListingCard .SellListingsItemNameColumn{
     display:flex;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 .SellListingCard .SellListingsItemNameColumn .SellListingCardItemPic{
     width:50px;
@@ -39,8 +42,30 @@
     text-transform: capitalize;
     font-weight: 600;
 }
-.SellListingCard .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
-    display: flex;
+.SellListingCard .SellListingsItemColumn, .SellListingsItemColumn{
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    text-align: center;
+}.SellListingCard .SellListingsActionColumn {
+    text-align: center;
+    max-width: 50px;
+}
+.SellListingCard .actionButton {
+    min-width: 50px ;
+    border:none;
+    outline:none;
+    font-weight: 500;
+    font-size: 16px;
+    padding:4px;
+    /* padding-left:8px; */
+    /* padding-right: 8px; */
+    cursor:pointer;
+    background-color: #4ADE80;
+    color:white;
+    border-radius: 4px;
+    transition:.2s;
+}
+.SellListingCard .actionButton:hover {
+    background-color: #22C55E;
 }

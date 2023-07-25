@@ -5,20 +5,30 @@
     box-shadow: 1px 1px 9px  #eeeeee;
     width: 100%;
     max-width: 1024px;
+    display: flex;
 }
 .SellListings .SellListingsTable {
-    display:flex;
-    flex-direction: column;
+    /* display:flex;
+    flex-direction: column; */
+    width: 100%;
+    border-spacing: 0 12px;
 }
 .SellListings .SellListingsTable .SellListingsHeader{
-    display:grid;
+    /* display:grid;
     grid-template-columns: auto 20% 20%;
-    margin-bottom: 30px;
+    grid-template-rows: auto;
+    margin-bottom: 30px; */
 }
-.SellListings .SellListingsTable .SellListingsHeader .SellListingsItemAmountColumn, .SellListingsItemPriceColumn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.SellListings .SellListingsTable .SellListingsHeader th {
+    font-weight: 400;
+}
+.SellListings .SellListingsTable .SellListingsItemNameColumn{
+    text-align: left;
+}
+.SellListings .SellListingsTable .SellListingsHeader .SellListingsItemColumn{
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 .linkDefault {
     color:black;

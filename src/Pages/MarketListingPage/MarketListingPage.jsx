@@ -3,10 +3,12 @@ import "./style.css"
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import Container from "../../Components/Container/Container";
 import PageLoading from "../../Components/PageLoading/PageLoading";
 import ItemStatsCard from "../../Components/ItemStatsCard/ItemStatsCard";
 import ItemTypesCard from "../../Components/ItemTypesCard/ItemTypesCard";
 import SellListings from "../../Components/SellListings/SellListings";
+import SellListingCard from "../../Components/SellListingCard/SellListingCard";
 
 import { PokemonCardTypesColors } from "../../misc/styles/PokemonCardColors/PokemonCardColors";
 
@@ -35,7 +37,8 @@ const MarketListingPage = () => {
                     </div>
 
                     :
-                    <>
+                    <Container>
+
                         <section className="MarketListingItemOverview"
                             style={{
                                 boxShadow: `2px 2px 5px ${PokemonCardTypesColors[items[0]?.info[0]?.type?.name]}, -2px -2px 5px ${PokemonCardTypesColors[items[0].info[0]?.type?.name]} `
@@ -70,8 +73,19 @@ const MarketListingPage = () => {
                             col1={"NAME"}
                             col2={""}
                             col3={"PRICE"}
-                        />
-                    </>
+                        >
+                            {items?.map((item,key) => {
+                                return (
+                                    <SellListingCard
+                                    item={item}
+                                    key={key}
+                                    action={{name:"Buy",action:() => {console.log("clicked")}}}
+                                />
+                                )
+                            })}
+                        </SellListings>
+
+                    </Container>
             }
         </main>
     )

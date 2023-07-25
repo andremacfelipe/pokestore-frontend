@@ -4,38 +4,28 @@ import { Link } from "react-router-dom"
 
 import SellListingCard from "../SellListingCard/SellListingCard"
 
-const SellListings = ({ items,col1,col2,col3 }) => {
+const SellListings = ({ items, col1, col2, col3, col4, children }) => {
     return (
         <div className="SellListings">
 
-            <div className="SellListingsTable">
-                <div className="SellListingsHeader SellListingsTableRow">
-                    <div className="SellListingsItemNameColumn">
-                        {col1}
-                    </div>
-                    <div className="SellListingsItemAmountColumn">
-                        {col2}
-                    </div>
-                    <div className="SellListingsItemPriceColumn">
-                        {col3}
-                    </div>
-                </div>
-                {
-                    items?.map((item, key) => {
-                        return (
-                            <Link
-                                to={`/market/item/${item.itemName}`}
-                                className="linkDefault"
-                            >
-                                <SellListingCard
-                                    item={item}
-                                    key={key}
-                                />
-                            </Link>
-                        )
-                    })
-                }
-            </div>
+            <table className="SellListingsTable">
+                <thead>
+                    <tr className="SellListingsHeader SellListingsTableRow">
+                        <th className="SellListingsItemNameColumn">
+                            {col1}
+                        </th>
+                        <th className="SellListingsItemColumn">
+                            {col2}
+                        </th>
+                        <th className="SellListingsItemColumn">
+                            {col3}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {children}
+                </tbody>
+            </table>
         </div>
     )
 }
