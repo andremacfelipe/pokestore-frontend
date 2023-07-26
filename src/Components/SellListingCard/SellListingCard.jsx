@@ -8,6 +8,8 @@ const SellListingCard = ({ item, price, action,onClick,navigateTo, className }) 
 
     const navigate = useNavigate()
 
+    
+
     return (
         
             <tr className="SellListingCard"
@@ -40,7 +42,7 @@ const SellListingCard = ({ item, price, action,onClick,navigateTo, className }) 
                     {item?.amount}
                 </td>
                 <td className="SellListingsItemColumn">
-                    {item?.price?.toFixed(2) || item?.market?.price.toFixed(2)}
+                    ${ item?.price?.toFixed(2) || item?.market?.price?.toFixed(2) }
 
                 </td>
                 

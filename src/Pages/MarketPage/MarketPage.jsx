@@ -1,6 +1,5 @@
 import "./style.css"
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import Container from "../../Components/Container/Container";
 import SellListings from "../../Components/SellListings/SellListings";

@@ -33,7 +33,7 @@ const CasePage = () => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [id])
 
     const onButtonClick = async () => {
         if (!userData) {

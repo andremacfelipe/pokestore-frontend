@@ -1,0 +1,96 @@
+.ItemOverlayRoot {
+    background-color: white;
+    box-shadow: 1px 1px 9px  #d2d2d2;
+    border-radius: 8px;
+    min-width: 370px;
+    height: 570px;
+    padding:12px;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.ItemOverlayRoot .OverlayTitle {
+    color:black;
+}
+.ItemOverlayRoot .PurchaseInfo {
+    display: flex;
+    justify-content: flex-end;
+}
+.ItemOverlayRoot .PaymentInfo {
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    padding: 12px;
+    padding-top:24px;
+    display: grid;
+    grid-template-rows: 24px 24px 48px;
+    row-gap: 12px;
+}
+.ItemOverlayRoot .PaymentInfo h3 {
+    font-weight: 400;
+}
+.ItemOverlayRoot .PaymentInfo button {
+    min-width: 50px ;
+    border:none;
+    outline:none;
+    font-weight: 500;
+    font-size: 16px;
+    padding:4px;
+    /* padding-left:8px; */
+    /* padding-right: 8px; */
+    cursor:pointer;
+    background-color: #4ADE80;
+    color:white;
+    border-radius: 4px;
+    transition:.2s;
+}
+.ItemOverlayRoot .PaymentInfo button:hover {
+    background-color: #22C55E;
+}
+.ItemOverlayRoot form {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 4px;
+}
+.ItemOverlayRoot form button {
+    min-width: 50px ;
+    border:none;
+    outline:none;
+    font-weight: 500;
+    font-size: 12px;
+    padding:4px;
+    /* padding-left:8px; */
+    /* padding-right: 8px; */
+    cursor:pointer;
+    background-color: #4ADE80;
+    color:white;
+    border-radius: 4px;
+    transition:.2s;
+}
+.ItemOverlayRoot form button:hover {
+    background-color: #22C55E;
+}
+.ItemOverlayRoot input {
+    padding:2px;
+    border:none;
+    border-radius:4px;
+    outline:1px solid gray;
+    font-size: 24px;
+    
+    
+}
+.ItemOverlayRoot input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media screen and (max-width:650px){
+    .ItemOverlayRoot{
+        padding:12px;
+    }
+}

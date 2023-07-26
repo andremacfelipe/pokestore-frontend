@@ -1,12 +1,13 @@
 import "./style.css"
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, } from "react-router-dom"
 
 import InventoryListings from "../../Components/InventoryListings/InventoryListings"
 import ItemInfoCard from "../../Components/ItemInfoCard/ItemInfoCard"
 import ArrowRight from "../../Components/MaterialSymbolsRounded/ArrowRight"
 import ArrowLeft from "../../Components/MaterialSymbolsRounded/ArrowLeft"
 import PageLoading from "../../Components/PageLoading/PageLoading";
+
 
 const InventoryPage = () => {
 
@@ -16,8 +17,11 @@ const InventoryPage = () => {
     const [infoCardItemId, setInfoCardItemId] = useState(null)
 
     const [loading, setLoading] = useState(true)
+    
 
     const { id } = useParams()
+
+    
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/api/profiles/${id}/inventory`)
@@ -38,9 +42,9 @@ const InventoryPage = () => {
                 setLoading(false)
             })
 
-        document.title = "Inventory"
+        
 
-    }, [])
+    }, [id])
 
     const nextInventoryPage = () => {
         if (currentPageIndex < inventoryPages.length - 1) {
@@ -96,7 +100,10 @@ const InventoryPage = () => {
                                 :
                                 <></>
                         }
+
+                    
                     </>
+
             }
         </main>
     )

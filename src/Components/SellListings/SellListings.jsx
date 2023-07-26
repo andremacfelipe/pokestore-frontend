@@ -1,8 +1,5 @@
 import "./style.css"
 import React from "react"
-import { Link } from "react-router-dom"
-
-import SellListingCard from "../SellListingCard/SellListingCard"
 
 const SellListings = ({ items, col1, col2, col3, col4, children }) => {
     return (
