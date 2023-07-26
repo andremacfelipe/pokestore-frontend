@@ -1,6 +1,4 @@
-.Container{
-    width: 100vw;
-    overflow-y: auto;
-    background-color: var(--ContainerBackgroundColor);
-    position:relative;
+.container{
+    max-width:800px;
+    width:100%;
 }

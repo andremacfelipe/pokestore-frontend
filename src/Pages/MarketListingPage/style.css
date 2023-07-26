@@ -1,0 +1,74 @@
+.MarketListingPage{
+    overflow-y:auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.MarketListingPage .MarketListingItemOverview {
+    width: 100%;
+    /* background-color: red; */
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 3px 1px gray, -1px -1px 3px -1px;
+    border-radius: 4px;
+    padding:10px;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+}
+.MarketListingPage .MarketListingItemOverview  .ItemOverviewPic {
+    max-width: 300px;
+    width: 100%;
+    height: 300px;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border:1px solid pink; */
+    border-radius:8px;
+
+}
+.MarketListingPage .MarketListingItemOverview  .ItemOverviewPic img {
+    width: 100%;
+}
+.MarketListingPage .MarketListingItemOverview .descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom:24px;
+}
+.MarketListingPage .MarketListingItemOverview .descriptionContainer h1 {
+    font-family: "Turret Road";
+    font-weight: bold;
+    font-size: 44px; 
+    text-transform: capitalize;
+}
+.MarketListingPage .MarketListingItemOverview .descriptionContainer .itemStatsContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.MarketListingPage .MarketListingItemOverview .descriptionContainer .itemStatsContainer .itemStats {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 20px;
+    font-size: 24px;
+}
+
+@media screen and (max-width:650px){
+    .MarketListingPage .container .MarketListingItemOverview {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}

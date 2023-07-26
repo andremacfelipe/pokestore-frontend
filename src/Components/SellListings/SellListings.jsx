@@ -1,25 +1,28 @@
 import "./style.css"
 import React from "react"
 
-import SellListingCard from "../SellListingCard/SellListingCard"
-
-const SellListings = () => {
+const SellListings = ({ items, col1, col2, col3, col4, children }) => {
     return (
         <div className="SellListings">
 
-            <div className="SellListingsTable">
-                <div className="SellListingsHeader SellListingsTableRow">
-                    <div className="SellListingsItemNameColumn">
-                        NAME
-                    </div>
-                    <div className="SellListingsItemAmountColumn">
-                        AMOUNT
-                    </div>
-                    <div className="SellListingsItemPriceColumn">
-                        PRICE
-                    </div>
-                </div>
-            </div>
+            <table className="SellListingsTable">
+                <thead>
+                    <tr className="SellListingsHeader SellListingsTableRow">
+                        <th className="SellListingsItemNameColumn">
+                            {col1}
+                        </th>
+                        <th className="SellListingsItemColumn">
+                            {col2}
+                        </th>
+                        <th className="SellListingsItemColumn">
+                            {col3}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {children}
+                </tbody>
+            </table>
         </div>
     )
 }

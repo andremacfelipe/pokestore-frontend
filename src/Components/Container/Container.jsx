@@ -5,8 +5,7 @@ import SideMenu from "../SideMenu/SideMenu"
 
 const Container = ({children}) => {
     return (
-        <div className="Container">
-            <SideMenu />
+        <div className="container">
             {children}
         </div>
     )

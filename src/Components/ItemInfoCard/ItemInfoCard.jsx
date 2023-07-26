@@ -1,24 +1,60 @@
 import "./style.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import PokemonCardIconImage from "../PokemonCardIconImage/PokemonCardIconImage";
 
 import { PokemonCardTypesColors } from "../../misc/styles/PokemonCardColors/PokemonCardColors";
+
+import AuthContext from "../../Contexts/AuthContext/AuthContext";
+
+import { ItemOverlay } from "../../Components/ItemOverlay/Index"
+import SellListingCard from "../../Components/SellListingCard/SellListingCard"
+import SellListings from "../SellListings/SellListings";
+import LoadingSpin from "../LoadingSpin/LoadingSpin";
+
+import putItemForSale from "../../services/api/putItemForSale";
+
 
 
 
 const ItemInfoCard = ({ itemId }) => {
 
     const [currentItem, setCurrentItem] = useState(null)
+    const { userData } = useContext(AuthContext)
+    const [sellPrice, setSellPrice] = useState(null)
+    const [saleLoading, setSaleLoading] = useState(false)
+    const [saleSuccess, setSaleSuccess] = useState(null)
+    const [showOverlay, setShowOverlay] = useState(false)
+
+
 
     useEffect(() => {
         if (itemId) {
             fetch(`${process.env.REACT_APP_API_URL}/api/item/${itemId}`)
                 .then(res => res.json())
-                .then(data => setCurrentItem(data))
+                .then(data => {
+                    setCurrentItem(data)
+                })
         }
     }, [itemId])
 
+    const putItemForSaleInMarket = async (itemId, sellPrice) => {
+        if (sellPrice > 0) {
+            setSaleLoading(true)
+            await putItemForSale(itemId, sellPrice)
+                .then(async (res) => {
+                    if (res.ok) {
+                        setSaleSuccess(res.response.item)
+                        setTimeout(() => {
+                            window.location.reload()
+                        }, 800)
+
+                    }
+                }).finally(() => {
+                    setSaleLoading(false)
+                })
+        }
+    }
 
     return (
         <div
@@ -103,7 +139,53 @@ const ItemInfoCard = ({ itemId }) => {
                             </>
                     }
                 </div>
+
+
+
             </div>
+            {
+                currentItem && userData && userData.userId === currentItem.currentItem.itemOwner ?
+                    <div className="marketOptions">
+                        <button onClick={() => { setShowOverlay(prev => !prev) }}>Sell</button>
+                    </div>
+                    : <></>
+
+            }
+
+            {
+                currentItem && userData && showOverlay ?
+                    <ItemOverlay.Root
+                        showOverlay={showOverlay}
+                        onOverlayClick={() => { setShowOverlay(false) }}
+
+                    >
+                        <ItemOverlay.Title
+                            title={"Put an item up for sale"}
+                        />
+
+
+                        <SellListings
+                            col1={"NAME"}
+                        >
+                            <SellListingCard
+                                item={currentItem?.currentItem}
+                            />
+                        </SellListings>
+                        <ItemOverlay.MarketForm>
+                                <ItemOverlay.InputPrice
+                                    onChange={(e) => { setSellPrice(e.target.value) }}
+                                />
+                                <button onClick={() => { putItemForSaleInMarket(itemId, sellPrice) }} >
+                                    Ok, put it up for sale
+                                </button>
+
+                        </ItemOverlay.MarketForm>
+                    </ItemOverlay.Root>
+
+                    : <></>
+            }
+
+
         </div>
     )
 }
