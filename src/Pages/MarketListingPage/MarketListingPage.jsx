@@ -203,9 +203,9 @@ const MarketListingPage = () => {
                             to={"/"}
                         />
                         :
-                        <div className="container">
+                        
                             <PageLoading />
-                        </div>
+                        
 
             }
         </main>
