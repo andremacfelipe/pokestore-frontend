@@ -20,7 +20,6 @@ export const AuthProvider = ({ children }) => {
         if (!userData && sessionStorage.getItem("USER_TOKEN")) {
             validateSession(sessionStorage.getItem("USER_TOKEN"))
                 .then((res) => {
-                    console.log("renderizou")
                     if (!res.ok) {
                         logout()
                     } else {
